@@ -1,0 +1,452 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+  #wrapper
+{
+ overflow:auto;
+ 
+}
+
+
+
+
+
+
+/* Container */
+
+.container{
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+/* intro */
+ 
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  background: url("../img/stamps-6301396_1920.jpg") center no-repeat;
+  
+  -webkit-background-size: cover;
+  background-size: cover;
+
+}
+
+
+.intro__title {
+  font-size: 58px;
+  font-weight: 700;
+  font-family: Unbounded;
+  text-align: center;
+  line-height: 2.0;
+  color: rgb(255, 255, 255);
+
+}
+
+.intro__title_2 {
+  margin-top: 10px;
+  line-height: 2.0;
+  color: rgb(255, 255, 255);
+}
+
+.intro__inner {
+   width: 100%;
+   max-width: 800px;
+   margin: 0 auto;
+}
+@media screen and (min-width: 120px) and (max-width: 450px) {
+  .intro__title {
+    font-size: 25px;
+  }
+}
+
+
+
+
+
+
+
+/* Header */
+
+.header {
+  width: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+}
+
+.header__logo {
+  font-family: Unbounded;
+   font-size: 30px;
+   font-weight: 700;
+   color: #fff;
+   
+}
+@media screen and (min-width: 120px) and (max-width: 450px) {
+  .header__logo{
+    margin-right: 0;
+    font-size: 20px;
+  }
+}
+
+.header__iner {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+/* Nav */
+
+.nav {
+   font-size: 17px;
+   font-family: Unbounded;
+   text-transform: uppercase;
+   
+}
+@media screen and (max-width: 450px) {
+  header .nav {
+    display: none;
+  }
+}
+
+.nav__link {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 13px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  position: relative;
+  transition: color .2s linear;
+  padding: 3px 10px;
+ 
+}
+
+.btn_primary:hover {
+color: #ffffff;
+}
+
+
+
+
+
+
+
+/* Section */
+
+.section {
+  padding: 50px 0;
+}
+
+.section__header { 
+  margin-bottom: 40px;
+}
+
+.section__logo {
+  font-size: 35px;
+  font-weight: 700;
+  font-family: Unbounded;
+  text-align: center;
+  line-height: 2.0;
+  color: rgb(23, 23, 23);
+}
+
+.section__2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  background: url("../img/hd.jpg") center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  
+  
+}
+
+/* section__2 */
+
+.section_2__container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section__2_title {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: Unbounded;
+  text-align: center;
+  line-height: 2.0;
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 600px) {
+  .section_2__container{
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+/* Card */
+
+.column { 
+  float: left;
+  width: 25%;
+  height: 100%;
+  padding: 0 10px;
+
+}
+
+/* Удалите лишние левые и правые поля, из-за заполнения */
+.row{
+  margin: 0 -5px;
+  
+}
+
+/* Очистить поплавки после столбцов */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Отзывчивые столбцы */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Стиль контейнера карточек */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin-bottom: 40px;
+  border-radius: 3px;
+}
+
+
+.checked {
+  color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 100;
+  width: 100%;
+  height: auto;
+  background-color: #fbfbfb;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px;
+}
+
+footer .nav__link{
+  color: black;
+  font-size: 14px;
+  margin-left: 10px;
+}
+footer nav .nav__link:hover {
+  border-bottom: 1px solid rgb(12, 12, 12);
+  
+}
+
+.logo_2 {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.social_logo {
+  display: inline-block;
+  width: 4%;
+  margin-right: 15px;
+  transition: .4s;
+}
+.social_logo:hover {
+  background: #515151;
+  border-radius: 50%;
+}
+@media screen and (max-width: 700px) {
+  .social_logo {
+    display: inline-block;
+    width: 8%;
+  }
+}
+
+@media screen and (min-width:120px) and (max-width: 400px) {
+  *{
+    padding-right: 0 auto;
+  }
+}
+
+
+footer p{
+  margin-top: 15px;
+  font-family: Raleway;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
